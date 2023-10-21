@@ -5,97 +5,114 @@ import DefaultLayout from '../layouts/Default.astro'
 ---
 
 <DefaultLayout title="Home">
-  <h1 class="mb-1 text-4xl font-bold">Doc Oliver</h1>
+  <h1 class="font-rubik mb-1 text-4xl font-bold">Doc Oliver</h1>
   <p class="text-sm uppercase tracking-wide text-zinc-400">
     Software Developer
   </p>
 
-  <div class="mt-7 mb-2 flex">
-    <h2
-      class="flex-shrink-0 text-lg font-light uppercase tracking-wide text-emerald-300"
-    >
-      About
-    </h2>
+  <section class="mt-7">
+    <div class="mb-2 flex">
+      <h2
+        class="flex-shrink-0 text-lg font-light uppercase tracking-wider text-emerald-300"
+      >
+        About
+      </h2>
 
-    <div class="mb-3 ml-2 w-full border-b border-b-zinc-700"></div>
-  </div>
-
-  <p class="mb-3">
-    Hey, I'm Doc! I'm a self-taught software developer from the U.S. and a
-    student currently studying computer science. I mainly focus on building
-    websites (full stack), but I also dabble in other things like desktop GUI
-    development and web scraping.
-  </p>
-
-  <p>
-    I enjoy watching film & TV, listening to music, writing, teaching, and
-    eating french toast with unhealthy amounts of maple syrup.
-  </p>
-
-  <div class="mt-7 mb-2 flex">
-    <h2
-      class="flex-shrink-0 text-lg font-light uppercase tracking-wide text-purple-300"
-    >
-      Socials
-    </h2>
-
-    <div class="mb-3 ml-2 w-full border-b border-b-zinc-700"></div>
-  </div>
-
-  <div class="grid grid-cols-1 gap-2 sm:grid-cols-3 sm:gap-4">
-    {
-      socials.map((social) => (
-        <a
-          href={social.url}
-          target="_blank"
-          class="col-span-1 rounded-md border border-zinc-700 py-3 px-4 transition-colors duration-100 hover:border-purple-300"
-        >
-          <div class="flex">
-            <svg style="width: 24px; height: 24px" viewBox="0 0 24 24">
-              <path fill="currentColor" d={social.iconPath} />
-            </svg>
-
-            <p class="ml-1 font-medium">{social.name}</p>
-          </div>
-        </a>
-      ))
-    }
-  </div>
-
-  <div class="mt-7 mb-2 flex">
-    <h2
-      class="flex-shrink-0 text-lg font-light uppercase tracking-wide text-blue-300"
-    >
-      Projects
-    </h2>
-
-    <div class="mb-3 ml-2 w-full border-b border-b-zinc-700"></div>
-  </div>
-
-  <div class="grid grid-cols-1 gap-2 sm:grid-cols-2 sm:gap-4">
-    {
-      projects.map((project) => (
-        <a
-          href={project.url}
-          target="_blank"
-          class="col-span-1 rounded-md border border-zinc-700 py-3 px-4 transition-colors duration-100 hover:border-blue-300"
-        >
-          <div class="mb-0.5 flex items-center">
-            <h3 class="mr-1.5 font-medium">{project.name}</h3>
-            <p class="text-light rounded-full bg-zinc-700 py-0.5 px-2 text-xs uppercase text-zinc-300">
-              {project.type}
-            </p>
-          </div>
-
-          <p class="text-zinc-400">{project.description}</p>
-        </a>
-      ))
-    }
-
-    <div
-      class="col-span-1 flex items-center justify-center rounded-md border border-zinc-700 py-3 px-4"
-    >
-      <p class="text-zinc-400">...and many more to come!</p>
+      <div class="mb-3 ml-2 w-full border-b border-b-zinc-700"></div>
     </div>
-  </div>
+
+    <p class="mb-3">
+      Hey, I'm Doc! I'm a self-taught software developer from the U.S. and a
+      student currently studying computer science. I mainly focus on building
+      websites (full stack), but I also dabble in other things like desktop GUI
+      development and web scraping.
+    </p>
+
+    <p>
+      I enjoy watching film & TV, listening to music, writing, teaching, and
+      eating french toast with unhealthy amounts of maple syrup.
+    </p>
+  </section>
+
+  <section class="mt-7">
+    <div class="mb-2 flex">
+      <h2
+        class="flex-shrink-0 text-lg font-light uppercase tracking-wider text-blue-300"
+      >
+        Socials
+      </h2>
+
+      <div class="mb-3 ml-2 w-full border-b border-b-zinc-700"></div>
+    </div>
+
+    <div class="grid grid-cols-1 gap-2 sm:grid-cols-3 sm:gap-4">
+      {
+        socials.map((social) => (
+          <a
+            href={social.url}
+            target="_blank"
+            class="col-span-1 rounded-md border border-zinc-700 py-3 px-4 transition-colors duration-100 hover:border-blue-300 hover:bg-blue-300/5"
+          >
+            <div class="flex">
+              <svg style="width: 24px; height: 24px" viewBox="0 0 24 24">
+                <path fill="currentColor" d={social.iconPath} />
+              </svg>
+
+              <p class="ml-1 font-medium">{social.name}</p>
+            </div>
+          </a>
+        ))
+      }
+    </div>
+  </section>
+
+  <section class="mt-7">
+    <div class="mt-7 mb-2 flex">
+      <h2
+        class="flex-shrink-0 text-lg font-light uppercase tracking-wider text-purple-300"
+      >
+        Projects
+      </h2>
+
+      <div class="mb-3 ml-2 w-full border-b border-b-zinc-700"></div>
+    </div>
+
+    <div class="grid auto-rows-[1fr] grid-cols-1 gap-2 sm:grid-cols-2 sm:gap-4">
+      {
+        projects.map((project) => (
+          <a
+            href={project.url}
+            target="_blank"
+            class="col-span-1 flex items-center rounded-md border border-zinc-700 py-3 px-4 transition-colors duration-100 hover:border-purple-300 hover:bg-purple-300/5"
+          >
+            <img
+              src={project.icon}
+              alt={`${project.name} logo`}
+              class="mr-4 h-7 w-7 rounded-md"
+            />
+
+            <div>
+              <div class="mb-0.5 flex items-center">
+                <h3 class="mr-1.5 font-medium">{project.name}</h3>
+                <p class="text-light rounded-full bg-zinc-700 py-0.5 px-2 text-xs uppercase text-zinc-300">
+                  {project.type}
+                </p>
+              </div>
+
+              <p class="text-zinc-400">{project.description}</p>
+            </div>
+          </a>
+        ))
+      }
+
+      <div
+        class:list={[
+          'flex items-center justify-center rounded-md border border-dashed border-zinc-700 px-4 col-span-1',
+          { 'sm:col-span-2': projects.length % 2 === 0 },
+        ]}
+      >
+        <p class="text-zinc-400">...and many more to come!</p>
+      </div>
+    </div>
+  </section>
 </DefaultLayout>

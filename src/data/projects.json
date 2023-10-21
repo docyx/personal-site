@@ -3,6 +3,7 @@
     "name": "IMDb Table",
     "type": "website",
     "description": "IMDb rating tables for TV shows",
-    "url": "https://docyx.github.io/imdb-table/"
+    "url": "https://docyx.github.io/imdb-table/",
+    "icon": "https://docyx.github.io/imdb-table/favicon.ico"
   }
 ]
